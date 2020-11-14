@@ -28,26 +28,22 @@
     const updateView = function(elementId = 'app') {
         const windowHash = window.location.hash.replace('#', '');
         const {path, controller} = this._routeMap[windowHash] || {};
-        fetchFile(path, (result) => {
+        fetchFile(path)
+        .then(result => {
             document.getElementById(elementId).innerHTML = result ? injectDataToView(result.toString(), controller()) : '<h1>404 Not found</h1>';
         });
     }
 
-    const fetchFile = function(path, cb){
-        if (path) {
-            fetch(path)
-            .then(res => res.text())
-            .then(res => cb(res));
-        } else {
-            cb(false)
-        }
+    const fetchFile = function(path){
+        return fetch(path)
+                .then(res => res.text())
     }
 
     const injectDataToView = function(string, data) {
         let stringCopy = string;
         Object.keys(data).forEach(key => {
            stringCopy = stringCopy.replace(`{{${key}}}`, data[key]);
-        })
+        });
         return stringCopy;
     }
 
