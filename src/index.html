@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="./useJs.js"></script>
+    <script>
+        USE.addRoute(() => {
+            return {
+                message: "Hello world!"
+            }
+        }, '/', './Views/home.html');
+        USE.addRoute(() => {
+            return {
+                name: 'Shahab',
+                family: 'Shahabi'
+            }
+        }, '/about', './Views/about.html');
+        USE.mount("app");
+    </script>
+</body>
+</html>
