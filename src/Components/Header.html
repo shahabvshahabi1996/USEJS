@@ -1,6 +1,17 @@
-<div>
-    <ul>
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/about">About</a></li>
-    </ul>
-</div>
+<template>
+    <div>
+        <ul>
+            <li><a href="#/">{{home}}</a></li>
+            <li><a href="#/about">{{about}}</a></li>
+        </ul>
+    </div>
+</template>
+
+<script>
+    () => {
+        return {
+            home: "Home",
+            about: "About"
+        }
+    }
+</script>

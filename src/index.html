@@ -6,26 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <ul>
-            <li><a href="#/">Home</a></li>
-            <li><a href="#/about">About</a></li>
-        </ul>
-    </div>
     <div id="app"></div>
     <script src="./useJs.js"></script>
     <script>
-        USE.addRoute(() => {
-            return {
-                message: "Hello world!"
-            }
-        }, '/', './Views/home.html');
-        USE.addRoute(() => {
-            return {
-                name: 'Shahab',
-                family: 'Shahabi'
-            }
-        }, '/about', './Views/about.html');
+        USE.addRoute('/', './Views/home.html');
+        USE.addRoute('/about', './Views/about.html');
         USE.mount("app");
     </script>
 </body>

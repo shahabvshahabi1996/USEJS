@@ -1,9 +1,20 @@
-<div>
-    $include('../Components/Header.html')
-    <h1>About</h1>
+<template>
     <div>
-        <p>First Name: {{name}}</p>
-        <p>Last Name: {{family}}</p>
+        <include src="../Components/Header.html"></include>
+        <h1>About</h1>
+        <div>
+            <p>First Name: {{name}}</p>
+            <p>Last Name: {{family}}</p>
+        </div>
+        <include src="../Components/Footer.html"></include>
     </div>
-    $include('./Home.html')
-</div>
+</template>
+
+<script>
+() => {
+    return {
+        name: 'Shahab',
+        family: 'Shahabi',
+    }
+}
+</script>

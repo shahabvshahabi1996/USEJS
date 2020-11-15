@@ -1,6 +1,18 @@
-<div>
-    <h1>Home</h1>
+<template>
     <div>
-        <p>{{message}}</p>
+        <include src="../Components/Header.html"></include>
+        <h1>Home</h1>
+        <div>
+            <p>{{message}}</p>
+        </div>
+        <include src="../Components/Footer.html"></include>
     </div>
-</div>
+</template>
+
+<script>
+    () => {
+        return {
+            message: "Hello world!"
+        }
+    }
+</script>
